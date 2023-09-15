@@ -12,8 +12,10 @@ spec:
       labels:
         app: ip-app
     spec:
+      nodeSelector:       
+        worker_node: node1
       containers:
       - name: ipapp
-        image: gurubasavaraj/ip_app:latest
+        image: harshajain/ip-app:1
         ports:
         - containerPort: 80

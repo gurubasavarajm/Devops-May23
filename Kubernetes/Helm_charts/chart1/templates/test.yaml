@@ -1,0 +1,15 @@
+
+spec: 
+  containers:
+  {{- with .Values.mycontainer }}
+  - name: {{ .name }}
+    image: {{ .image }}
+    ports:
+     containerPort:
+    {{- range .containerPort }}
+      - {{ . }} 
+    {{- end }}
+    {{- end }}
+
+
+{{- include "test.container1" -}}

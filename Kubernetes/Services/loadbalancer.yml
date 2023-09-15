@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: my-loadbalancer-ip
+spec:
+    type: LoadBalancer
+    selector:
+         app: ip_app
+    ports:
+      - name: tcp
+        port: 8080
+        targetPort: 80

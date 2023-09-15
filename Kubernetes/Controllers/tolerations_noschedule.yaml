@@ -12,8 +12,13 @@ spec:
       labels:
         app: ip-app
     spec:
+      tolerations:
+      - key: env
+        value: dev
+        effect: NoSchedule
+        operator: "Equal"
       containers:
       - name: ipapp
-        image: gurubasavaraj/ip_app:latest
+        image: harshajain/ip-app:1
         ports:
         - containerPort: 80
