@@ -1,15 +1,24 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
+<<<<<<< HEAD
   name: my-pv 
 spec: 
+=======
+  name: my-pv
+spec:
+>>>>>>> c5f0c25b3daafd86b13c13c28d8373cb3d9c29db
   storageClassName: local
   accessModes:
   - ReadWriteMany
   capacity:
     storage: 2Gi
   hostPath:
+<<<<<<< HEAD
     path: '/home/ubuntu/'
 
 
 
+=======
+    path: '/home/ubuntu/'
+>>>>>>> c5f0c25b3daafd86b13c13c28d8373cb3d9c29db

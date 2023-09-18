@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
+<<<<<<< HEAD
     name: my-pod-secrets-configmaps 
 spec: 
     containers:
@@ -27,3 +28,24 @@ spec:
          #    - name: secret-volume
          #secret:
          # secretName: my-vol-secret
+=======
+    name: my-pod-secrets-configmaps
+spec:
+  containers:
+  - name: ip-app
+    image: harshajain/ip_app:2
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: config-volume
+      mountPath: '/app/volume/configmap'
+    - name: secret-volume
+      mountPath: '/app/volume/secret'  
+  volumes:
+  - name: config-volume 
+    configMap: 
+       name: my-vol-cm
+  - name: secret-volume 
+    secret:
+       secretName: my-vol-secret       
+>>>>>>> c5f0c25b3daafd86b13c13c28d8373cb3d9c29db

@@ -2,7 +2,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: my-sa-role-binding
+<<<<<<< HEAD
 subjects: 
+=======
+  namespace: default
+subjects:
+>>>>>>> c5f0c25b3daafd86b13c13c28d8373cb3d9c29db
 - kind: ServiceAccount
   name: my-sa
 roleRef:

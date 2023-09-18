@@ -1,5 +1,6 @@
 apiVersion: batch/v1
 kind: Job
+<<<<<<< HEAD
 metadata: 
     name: my-job
 spec: 
@@ -16,3 +17,21 @@ spec:
           - -c
           - "sleep 20; exit 1"
         restartPolicy: Never      
+=======
+metadata:
+    name: my-job
+spec:
+    completions: 1
+    backoffLimit: 2
+    activeDeadlineSeconds: 5
+    template:
+      spec: 
+        containers: 
+        - name: busybox 
+          image: busybox
+          command: 
+          - /bin/sh
+          - -c 
+          - "sleep 20; exit 1"
+        restartPolicy: Never 
+>>>>>>> c5f0c25b3daafd86b13c13c28d8373cb3d9c29db
